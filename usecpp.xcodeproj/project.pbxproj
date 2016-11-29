@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A48DE52C1DEDA78E000CFE2C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DE52B1DEDA78E000CFE2C /* main.swift */; };
+		A48DE5351DEDA839000CFE2C /* Jobbie.mm in Sources */ = {isa = PBXBuildFile; fileRef = A48DE5341DEDA839000CFE2C /* Jobbie.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		A48DE5281DEDA78E000CFE2C /* usecpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = usecpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48DE52B1DEDA78E000CFE2C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A48DE5321DEDA839000CFE2C /* usecpp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "usecpp-Bridging-Header.h"; sourceTree = "<group>"; };
+		A48DE5331DEDA839000CFE2C /* Jobbie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jobbie.h; sourceTree = "<group>"; };
+		A48DE5341DEDA839000CFE2C /* Jobbie.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Jobbie.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				A48DE52B1DEDA78E000CFE2C /* main.swift */,
+				A48DE5331DEDA839000CFE2C /* Jobbie.h */,
+				A48DE5341DEDA839000CFE2C /* Jobbie.mm */,
+				A48DE5321DEDA839000CFE2C /* usecpp-Bridging-Header.h */,
 			);
 			path = usecpp;
 			sourceTree = "<group>";
@@ -94,6 +101,7 @@
 				TargetAttributes = {
 					A48DE5271DEDA78D000CFE2C = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -120,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48DE5351DEDA839000CFE2C /* Jobbie.mm in Sources */,
 				A48DE52C1DEDA78E000CFE2C /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,7 +227,11 @@
 		A48DE5301DEDA78E000CFE2C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "usecpp/usecpp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -226,7 +239,10 @@
 		A48DE5311DEDA78E000CFE2C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "usecpp/usecpp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

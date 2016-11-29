@@ -10,3 +10,10 @@ import Foundation
 
 print("Hello, World!")
 
+var n = "Bob";
+var a = Jobbie();
+a.name = n;
+n = "Bill";
+
+print(a.name, n);
+
